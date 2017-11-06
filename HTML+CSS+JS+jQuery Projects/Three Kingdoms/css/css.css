@@ -6,11 +6,11 @@ body { line-height:22px; font-size:13px; color:#333; background:#160300; font-fa
 
 
 
-.bg1 { background:#270500 url(http://cdn1.zygames.com/mocool/zqsg/index/bg.jpg) no-repeat 50% -90px; height:850px; overflow:hidden; min-width:1000px; max-width:2000px; margin:0 auto; position:relative}
+.bg1 { background:#270500 url(../images/bg.jpg) no-repeat 50% -90px; height:850px; overflow:hidden; min-width:1000px; max-width:2000px; margin:0 auto; position:relative}
 
 
-.pattern { height:619px; background:url(http://cdn1.zygames.com/mocool/zqsg/index/pattern_bg.png) repeat-x;width:85%; margin:0 auto;  margin-top:55px; position:relative; max-width:2000px}
-	.patternLine { position:absolute; top:-29px; height:697px; width:52px;  background:url(http://cdn1.zygames.com/mocool/zqsg/index/pattern_line.jpg) no-repeat;}
+.pattern { height:619px; background:url(../images/pattern_bg.png) repeat-x;width:85%; margin:0 auto;  margin-top:55px; position:relative; max-width:2000px}
+	.patternLine { position:absolute; top:-29px; height:697px; width:52px;  background:url(../images/pattern_line.jpg) no-repeat;}
 	.patternLine_l { left:-30px}
 	.patternLine_r { background-position:-52px 0; right:-30px}
 
@@ -24,7 +24,7 @@ body { line-height:22px; font-size:13px; color:#333; background:#160300; font-fa
 		#scene_back { background-position:0 0; background-repeat:repeat-x}
 		#door { width:256px; height:276px;background:no-repeat; position:absolute; bottom:-50px; right:-22px;}
 		#door2 { width:210px; height:400px;background:no-repeat; position:absolute; bottom:0px; right:0px;}
-		#alertBox {display:none; position:absolute; width:100%; height:100%; background:url(http://cdn1.zygames.com/mocool/zqsg/index/bgall2.png) repeat;}
+		#alertBox {display:none; position:absolute; width:100%; height:100%; background:url(../images/bgall2.png) repeat;}
 		#alert { width:493px; height:348px;background:no-repeat; position:absolute; top:90px; left:50%; margin-left:-247px;/*top:180px;*/}
 		 #alert a { display:block;position:absolute; width:100px; height:120px; overflow:hiddenl; border-radius:30px}
 		 #alert .a0 { width:50px; height:40px; top:20px; right:0}
@@ -34,20 +34,20 @@ body { line-height:22px; font-size:13px; color:#333; background:#160300; font-fa
 	
 	
 	#loadingBack { display:block}
-	#loadingLine { width:131px; height:127px; position:absolute; left:50%; margin-left:-68px; top:190px;background:url(http://cdn1.zygames.com/mocool/zqsg/index/loading.gif) no-repeat;}
+	#loadingLine { width:131px; height:127px; position:absolute; left:50%; margin-left:-68px; top:190px;background:url(../images/loading.gif) no-repeat;}
 
 	#loadingNumber { font-size:30px; font-weight:bold; font-family:Georgia, "Times New Roman", Times, serif; color:#feb200; width:300px; height:50px; text-align:center; line-height:50px; position:absolute; left:50%; margin-left:-150px; top:330px;}
 	
 	
-	.cloud { position:absolute; width:302px; height:99px; overflow:hidden; background-image:url(http://cdn1.zygames.com/mocool/zqsg/index/sceneBg_cloud.png)}
+	.cloud { position:absolute; width:302px; height:99px; overflow:hidden; background-image:url(../images/sceneBg_cloud.png)}
 	.cloud_1 { background-position:0 0}
 	.cloud_2 { background-position:0 -99px;}
-	#cover { position:absolute; width:100%; height:100%; background:url(http://cdn1.zygames.com/mocool/zqsg/index/bgall.png) repeat; }
+	#cover { position:absolute; width:100%; height:100%; background:url(../images/bgall.png) repeat; }
 	#loadingMes { position:absolute;  width:226px; left:50%; margin-left:-113px;height:20px; bottom:50px; color:#fff; text-align:center}
 	#loadingMes a:hover { color:#FF0}
 	
-	.speak { width:246px; height:128px; position:absolute;  position:absolute;  top:-80px; left:0px; display:none; font-size:13px; font-family:"微软雅黑";line-height:20px;background:url(http://cdn1.zygames.com/mocool/zqsg/index/mes.png) repeat; overflow:hidden}
-	.speak .msg {background:url(http://cdn1.zygames.com/mocool/zqsg/index/mesin.png) no-repeat; width:217px; height:70px; margin:18px 0 0 14px}
+	.speak { width:246px; height:128px; position:absolute;  position:absolute;  top:-80px; left:0px; display:none; font-size:13px; font-family:"微软雅黑";line-height:20px;background:url(../images/mes.png) repeat; overflow:hidden}
+	.speak .msg {background:url(../images/mesin.png) no-repeat; width:217px; height:70px; margin:18px 0 0 14px}
 
 	#bgclick { position:absolute; width:100%; height:100%}
 	.color { margin-left:-30px}
@@ -60,7 +60,7 @@ body { line-height:22px; font-size:13px; color:#333; background:#160300; font-fa
 	
 	
 .btnBox { width:700px; height:78px; position:absolute; left:50%; margin-left:-335px; top:672px;}
-.btn { display:block; background:url(http://cdn1.zygames.com/mocool/zqsg/index/btn.png) no-repeat; position:absolute; width:78px; height:78px;}
+.btn { display:block; background:url(../images/btn.png) no-repeat; position:absolute; width:78px; height:78px;}
 	.enter {background-position: -312px 0; left:210px; top:4px; width:267px}
 	.btn1 { background-position: 0 0; left:0;}
 	.btn2 { background-position: -78px 0; left:100px;}
@@ -87,13 +87,13 @@ body { line-height:22px; font-size:13px; color:#333; background:#160300; font-fa
 	.btn4 {-webkit-animation-name:round4;-moz-animation-name:round4;}
 */
 	.menuaccountBox { position:absolute; width:100%; height:50px; bottom:88px; overflow:hidden;}
-	.account { width:79px; height:31px;background:url(http://cdn1.zygames.com/mocool/zqsg/index/menuaccount.png) no-repeat; text-align:center; color:#b16128; line-height:25px; overflow:hidden; position:absolute; bottom:-31px;}
+	.account { width:79px; height:31px;background:url(../images/menuaccount.png) no-repeat; text-align:center; color:#b16128; line-height:25px; overflow:hidden; position:absolute; bottom:-31px;}
 	.account1 { left:2px}
 	.account2 { left:103px}
-	.account3 { left:450px;  bottom:-174px; width:149px; height:174px;background:url(http://cdn1.zygames.com/mocool/zqsg/index/ewm.png) no-repeat;}
+	.account3 { left:450px;  bottom:-174px; width:149px; height:174px;background:url(../images/ewm.png) no-repeat;}
 	.account4 { left:592px}
 
-.face {width:25px; height:20px; overflow:hidden; line-height:20px;padding:0;background:url(http://cdn1.zygames.com/mocool/zqsg/index/face.png) no-repeat; display:inline-block; margin-bottom:-5px}
+.face {width:25px; height:20px; overflow:hidden; line-height:20px;padding:0;background:url(../images/face.png) no-repeat; display:inline-block; margin-bottom:-5px}
 .face1 { background-position:0 0px;}
 .face2 { background-position:0 -20px;}
 .face3 { background-position:0 -40px;}
