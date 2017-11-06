@@ -1,6 +1,6 @@
 ﻿//QQ339788838
 $(document).ready(function(e) {
-	
+
 var windowWidth = $(window).width();
 var allSceneWidth = 2100;  //画卷整体长度
 var iit = 4;
@@ -22,8 +22,8 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 //--英雄类 hero  id节点
 	function hero(x,y,id,name){
 		//属性
-		this.y = y;	
-		this.x = x;	
+		this.y = y;
+		this.x = x;
 		this.name = name;
 		this.box = $(id);
 		this.box.css({"left":+x+"px"});
@@ -78,7 +78,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 				actMove = 2;
 				actStand = 0;
 			};
-			
+
 			_self.action(actMove,70);
 			clearInterval(_self.moveinterval);
 			_self.moveinterval = setInterval(function(){
@@ -88,16 +88,16 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 					clearInterval(_self.moveinterval);
 					_self.action(actStand,150);
 					alertbox.stop().fadeIn(20).click(function(){return false});
-					alertbox.find(".a1").click(function(){window.open("http://www.baidu.com")});
-					alertbox.find(".a2").click(function(){window.location = "http://zqsg.zygames.com/main.html"});
-					alertbox.find(".a3").click(function(){window.open("https://passport.zygames.com/Register")});
+					alertbox.find(".a1").click(function(){return false});
+					alertbox.find(".a2").click(function(){return false});
+					alertbox.find(".a3").click(function(){return false});
 					alertboxClose.click(function(){alertbox.stop().fadeOut(20); return false;})
 				}else if((_self.x+(-_self.scene_m_x)) == newX)
 				{
 					clearInterval(_self.moveinterval);
 					_self.action(actStand,150);
-					
-	
+
+
 				}else if(_self.x == heroMiddleX)  //else if(_self.x == heroMiddleX && _self.scene_m_x >= (-usableX) && _self.scene_m_x <= 0)
 				{
 					scene_middle.css({"left":+(_self.scene_m_x)+"px"});
@@ -108,9 +108,9 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 					_self.scene_f_x+=direction_f;
 					if(_self.scene_m_x==(-usableX) ||_self.scene_m_x==0)
 					{
-					 _self.x+=direction;	
-					}					
-				}else if(_self.x < heroMiddleX) 
+					 _self.x+=direction;
+					}
+				}else if(_self.x < heroMiddleX)
 				{
 					_self.box.css({"left":+(_self.x)+"px"});
 					_self.box
@@ -122,7 +122,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 				}
 			},16)
 		}
-		
+
 		this.speakTime = false;
 		this.speakInterval = false;
 		this.speak = function()
@@ -140,7 +140,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 				_self.speakInTime();
 				return false;
 			});
-			
+
 		}
 		this.speakInTime = function(){
 			clearInterval(_self.speakInterval);
@@ -166,29 +166,29 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 	{
 		this.x = x;
 		this.y = y;
-		this.style = style;	
+		this.style = style;
 		this.id = id;
 		this.speed = speed;
 		//初始化
 		var _self = this;
 		$("<div id='cloud_"+this.id+"' style='left:"+_self.x+"px;top:"+_self.y+"px' class='cloud cloud_"+style+"'></div>").appendTo(scene_middle);
 		this.box = $("#cloud_"+this.id);
-	
+
 		this.move = function()
 		{
 			setInterval(function(){
 				_self.x = _self.x%allSceneWidth;
 				_self.box.css({"left":+(allSceneWidth-_self.x-302)+"px"});
 				_self.x += speed;
-			},50)	
+			},50)
 		}
 		this.move();
 	}
 
 
 //加载---
-	
-	
+
+
 	startbcak()
 	function startbcak(){
 		if(start==0)
@@ -196,11 +196,11 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			$("#loadingBack").animate({"left":+(-(allSceneWidth-$("#patternConBox").width()))+"px"},20000,'linear',function(){$(this).animate({"left":"0px"},20000,'linear',function(){startbcak()})});
 		}
 	}
-	
+
 	var loadnum = 0;           //进度加载数值
-	
-	
-	
+
+
+
 	//loading
 	/*
 	var loadingLine = $("#loadingLine");
@@ -228,16 +228,16 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#logo").css({"background-image":"url("+this.src+")"}).fadeIn(600,function(){$(this).animate({"margin-left":"-450px","margin-top":"-240px"},300)});
 
-				
+
 			};
 		ys1.src="http://cdn1.zygames.com/mocool/zqsg/index/logo.png";
 		//slogan
 		var ys2 = new Image();
-		
+
 		ys2.onload = function(){
 			loadnum++;
 			loading(loadnum);
-			$("#slogan").css({"background-image":"url("+this.src+")"}).fadeIn(1200);	
+			$("#slogan").css({"background-image":"url("+this.src+")"}).fadeIn(1200);
 		};
 		ys2.src="http://cdn1.zygames.com/mocool/zqsg/index/slogan.png";
 		//hero
@@ -250,7 +250,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 		ys7.src="http://cdn1.zygames.com/mocool/zqsg/index/hero3.png";
 		//前景
 		var ys3 = new Image();
-		
+
 		ys3.onload = function(){
 			loadnum++;
 			loading(loadnum);
@@ -304,11 +304,11 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			$("#alert").css({"background-image":"url("+this.src+")"});
 		};
 		ys10.src="http://cdn1.zygames.com/mocool/zqsg/index/alertBg.png";
-		
+
 	};
 	ys0.src="http://cdn1.zygames.com/mocool/zqsg/index/loadingBg.jpg";
-	
-	
+
+
 	//loading
 	function loading(v)
 	{
@@ -331,7 +331,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 				break;
 			case 6:
 				v = 85;
-				break;	
+				break;
 			case 7:
 				v = 92;
 				break;
@@ -344,13 +344,13 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			case 10:
 				v = 100;
 				break;
-			
+
 			default:
 				break;
 		}
 		$("#loadingNumber").html(v+"/100");
-		
-		
+
+
 		/*加载完成*/
 
 		if(v==100)
@@ -381,13 +381,13 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			$(document).mousemove(function(e){mouseX = e.pageX;});
 			$("#patternConBox").click(function(){girlHero.move(mouseX - $(this).offset().left - $("#hero").position().left-95);});
 		}
-		
+
 	}
-	
-	
+
+
 	var abot = 31;
 	$(".btnaccount").each(function(index, element) {
-        
+
 		$(this).hover(function()
 		{
 			if(index==2)
@@ -395,7 +395,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 				$(".menuaccountBox").height(180);
 			}
 			$(".account").eq(index).stop().animate({"bottom":"5px"},200);
-			
+
 		},function()
 		{
 			if(index==2)
@@ -405,11 +405,11 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			}
 			$(".account").eq(index).stop().animate({"bottom":+(-abot)+"px"},200);
 		})
-		
-    });
-	
 
-	
+    });
+
+
+
 });
 
 //插件
