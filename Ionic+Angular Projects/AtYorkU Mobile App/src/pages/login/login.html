@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="showLoginPage; else showRegister" class="loginBox">
+    <div class="input-no-border">
+      <ion-item margin-top class="input-no-border">
+        <ion-label>邮箱</ion-label>
+        <ion-input [(ngModel)]="username" type="email" placeholder="请输入邮箱" clearInput required></ion-input>
+      </ion-item>
+      <ion-item margin-top class="input-no-border">
+        <ion-label>密码</ion-label>
+        <ion-input [(ngModel)]="password" type="password" placeholder="请输入密码" clearInput required></ion-input>
+      </ion-item>
+    </div>
+    <br>
+    <button type="submit" ion-button block (click)="login()">登 录</button>
+    <div text-center padding-top>
+      <button ion-button outline margin-top (click)="switchToRegisterPage()">注册一个新账号</button>
+    </div>
+
+  </div>
+
+  <template #showRegister class="registerBox">
+    <div class=input-no-border>
+      <ion-item margin-top>
+        <ion-label>邮箱</ion-label>
+        <ion-input [(ngModel)]="username" type="email" placeholder="请输一个邮箱，作为用户名" clearInput></ion-input>
+      </ion-item>
+      <ion-item margin-top>
+        <ion-label>密码</ion-label>
+        <ion-input [(ngModel)]="password" type="password" placeholder="请输入密码" clearInput></ion-input>
+      </ion-item>
+      <ion-item margin-top>
+        <ion-label>密码</ion-label>
+        <ion-input [(ngModel)]="password2" type="password" placeholder="请再输入一遍密码" clearInput></ion-input>
+      </ion-item>
+      <p>点击注册代表你已同意<a href="http://www.atyorku.ca/apps/guide/index.php?guide_id=4" target="_blank">用户协议</a></p>
+    </div>
+    <br>
+    <button ion-button block (click)="register()">注 册</button>
+    <div text-center padding-top>
+      <button ion-button outline margin-top class="loginBtn" (click)="switchToLoginPage()">已有账号? 点击登录</button>
+    </div>
+
+
+  </template>
+
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="header">
+
+    <ion-title>home</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navigateToLoginPage()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding no-bounce>
+  <button ion-button (click)="alertMessage()">show</button>
+  <button ion-button (click)="verify()">验证</button>
+
+  <ion-icon name="text"></ion-icon>
+</ion-content>

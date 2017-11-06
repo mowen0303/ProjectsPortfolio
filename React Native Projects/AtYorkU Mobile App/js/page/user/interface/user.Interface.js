@@ -1,0 +1,24 @@
+export default class UserInterface {
+    id="";
+    degree="";
+    wechat="";
+    user_class_id="";
+    major="";
+    enroll_year="";
+    description="";
+    img="";
+    alias="";
+    gender="";
+    title="";
+    blocktime="";
+    blockreason="";
+    activist="";
+    credit="";
+    name="";
+    registertime="";
+    is_admin="";
+    authority="";
+    enrollYearTranslate="";
+    blockState="";
+    blockToTime="";
+}

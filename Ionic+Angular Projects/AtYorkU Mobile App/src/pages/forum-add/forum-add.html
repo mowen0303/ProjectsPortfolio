@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>添加</ion-title>
+    <ion-buttons end>
+      <button end [disabled]="!enabledAddButton" ion-button (click)="addForum()">发布</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-textarea [(ngModel)]="content" placeholder="发布信息到同学圈..."></ion-textarea>
+  </ion-item>
+  <ion-item margin-top>
+    <ion-label>选择分类</ion-label>
+    <ion-select [(ngModel)]="selectedForumCategory">
+      <ion-option *ngFor="let forumCategory of forumCategories; first as isFirst" [value]="forumCategory"
+                  [selected]="isFirst">{{forumCategory.title}}
+      </ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-grid margin-top class="priceBox" *ngIf="selectedForumCategory.type == 'commercial'">
+    <ion-row>
+      <ion-col>
+        <ion-item class="input-no-border">
+          <ion-label>价格</ion-label>
+          <ion-input type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col col-3>
+        <button no-margin ion-button outline block color="header" [ngClass]="{'activate':priceCategory=='buy'}"
+                (click)="selectPriceCategory('buy')">买
+        </button>
+      </ion-col>
+      <ion-col col-3>
+        <button no-margin ion-button outline block color="header" [ngClass]="{'activate':priceCategory=='sell'}"
+                (click)="selectPriceCategory('sell')">卖
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <a margin-top class="img1" (click)="pickPhoto()" [ngStyle]="{'background-image':'url('+img1+')'}"></a>
+</ion-content>

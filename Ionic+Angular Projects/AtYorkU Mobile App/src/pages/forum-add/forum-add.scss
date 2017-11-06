@@ -1,0 +1,50 @@
+page-forum-add {
+
+
+  ion-content {
+    background: color($colors, content-bg) !important;
+  }
+
+  ion-item {
+
+    .item-inner {
+      border: 0 !important;
+    }
+  }
+
+  .priceBox {
+    button {
+      background: #fff;
+      border-color: #ccc;
+    }
+    button.activate {
+      background: color($colors, header);
+      border-color: color($colors, header);
+      color: #f4f4f4;
+    }
+  }
+
+  ion-grid {
+    padding: 0 !important;
+
+    ion-col:first-child {
+      padding-left: 0;
+    }
+    ion-col:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .img1 {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    background-size: auto 100%;
+  }
+
+  textarea {
+    height: 10em !important;
+  }
+
+}

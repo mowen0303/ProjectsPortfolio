@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-buttons>
+      <button *ngIf="amountOfReport > 0" ion-button icon-only (click)="navigateToReportList()">
+        <ion-icon name="jingcha"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>同学圈</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="navigateToForumAddPage()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-toolbar color="light" text-center>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col *ngFor="let forumCategory of forumCategories; index as i"><a
+          [ngClass]="{'activate': i == activatedCategoryTbaIndex}" (click)="clickCategories(forumCategory.id,i)"><span>{{forumCategory.title}}</span></a>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content overflow-scroll="true">
+
+  <ion-refresher (ionRefresh)="doRefresh(false,$event)" [pullMax]="1000">
+    <ion-refresher-content pullingIcon="ios-arrow-down-outline" refreshingSpinner="crescent">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list class="forumInfoBox" *ngIf="forumCategories.length>0 && page == 1">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="forumCategories[activatedCategoryTbaIndex].icon | hostUrl">
+      </ion-avatar>
+      <h2>{{forumCategories[activatedCategoryTbaIndex].description}}</h2>
+      <p>主题<span>{{forumCategories[activatedCategoryTbaIndex].count_all}}</span> &nbsp;&nbsp;&nbsp;&nbsp; 今日 <span>{{forumCategories[activatedCategoryTbaIndex].count_today}}</span>
+      </p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="forumList">
+    <button ion-item class="forumBox" *ngFor="let forum of forums; index as i"
+            (click)="navigateToForumDetail($event,forum.id,i)">
+      <header>
+        <p class="category">
+          <span class="s1" *ngIf="forum.sort >0">置顶</span>
+          <span class="s3"
+                *ngIf="forum.category != 'null' && forum.price != 0">{{forum.category | commercialType}}</span>
+          <span class="s2">{{forum.classTitle}}</span>
+        </p>
+        <p class="userPhoto">
+          <span class="img" [ngStyle]="{'background-image':'url('+commonToolService.host+forum.img+')'}"></span>
+        </p>
+        <p class="userName">{{forum.alias}}
+          <ion-icon [name]="forum.gender|genderIcon"></ion-icon>
+          <ion-icon *ngIf="forum.is_admin == 1" name="zuigaoji"></ion-icon>
+        </p>
+        <p class="userInfo">{{forum.major|translateNull:'专业'}} - {{forum.enroll_year|translateNull:'年级'}} -
+          {{forum.degree|translateNull:'学历'}} </p>
+      </header>
+
+      <section>
+        <pre>{{forum.content|contentLength:75}}</pre>
+        <p *ngIf="forum.img1 != ''" class="imgBox" [ngClass]="{'horizontal':forum.img1Width-forum.img1Height>0}"
+           [ngStyle]="{'background-image':'url('+commonToolService.host+forum.img1+')'}"></p>
+      </section>
+
+      <footer>
+        <p class="priceBox" *ngIf="forum.category != 'null' && forum.price != 0">${{forum.price}}</p>
+        <span><ion-icon name="text"></ion-icon>{{forum.comment_num}}</span>
+        <span><ion-icon name="redu"></ion-icon>{{forum.count_view}}</span>
+        <span>{{forum.time}}</span>
+        <span><a *ngIf="forum.editable == 'yes'" (click)="alertDelete($event,forum.id,i)">删除</a></span>
+      </footer>
+    </button>
+  </ion-list>
+
+  <ion-fab right top #fab>
+    <button ion-fab color="primary">第{{page}}页</button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="clickFabOfLastPage(fab)">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+      <button ion-fab (click)="clickFabOfRefresh(fab)">
+        <ion-icon name="md-home"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <a class="loadMoreBox" *ngIf="infiniteTextBox" (click)="loadingMore()">点击加载更多</a>
+
+</ion-content>

@@ -1,0 +1,206 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face {font-family: "Ionicons";
+  src: url('../assets/font/iconfont.eot?t=1505016931639'); /* IE9*/
+  src: url('../assets/font/iconfont.eot?t=1505016931639#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../assets/font/iconfont.woff?t=1505016931639') format('woff'), /* chrome, firefox */
+  url('../assets/font/iconfont.ttf?t=1505016931639') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../assets/font/iconfont.svg?t=1505016931639#Ionicons') format('svg'); /* iOS 4.1- */
+}
+
+.ion-ios-zan:before,.ion-md-zan:before,.ion-md-zan-outline:before { content: "\e600"; }
+.ion-ios-kecheng:before,.ion-md-kecheng:before,.ion-md-kecheng-outline:before { content: "\e601"; }
+.ion-ios-appreciatefill:before,.ion-md-appreciatefill:before,.ion-md-appreciatefill-outline:before { content: "\e6e3"; }
+.ion-ios-shenqinggaojirencai:before,.ion-md-shenqinggaojirencai:before,.ion-md-shenqinggaojirencai-outline:before { content: "\e6ff"; }
+.ion-ios-tongxuequandisc:before,.ion-md-tongxuequandisc:before,.ion-md-tongxuequandisc-outline:before { content: "\e7e1"; }
+.ion-ios-zan1:before,.ion-md-zan1:before,.ion-md-zan1-outline:before { content: "\e62b"; }
+.ion-ios-zan2:before,.ion-md-zan2:before,.ion-md-zan2-outline:before { content: "\e614"; }
+.ion-ios-fenxiang:before,.ion-md-fenxiang:before,.ion-md-fenxiang-outline:before { content: "\e64a"; }
+.ion-ios-redu:before,.ion-md-redu:before,.ion-md-redu-outline:before { content: "\e617"; }
+.ion-ios-xuefen:before,.ion-md-xuefen:before,.ion-md-xuefen-outline:before { content: "\e61f"; }
+.ion-ios-gender-0:before,.ion-md-gender-0:before,.ion-md-gender-0-outline:before { content: "\e602"; }
+.ion-ios-iconfont:before,.ion-md-iconfont:before,.ion-md-iconfont-outline:before { content: "\e621"; }
+.ion-ios-fenxiang1:before,.ion-md-fenxiang1:before,.ion-md-fenxiang1-outline:before { content: "\e690"; }
+.ion-ios-xuefen1:before,.ion-md-xuefen1:before,.ion-md-xuefen1-outline:before { content: "\e69d"; }
+.ion-ios-wenzhang-copy:before,.ion-md-wenzhang-copy:before,.ion-md-wenzhang-copy-outline:before { content: "\e605"; }
+.ion-ios-iconzhenghe43:before,.ion-md-iconzhenghe43:before,.ion-md-iconzhenghe43-outline:before { content: "\e73c"; }
+.ion-ios-pingjia:before,.ion-md-pingjia:before,.ion-md-pingjia-outline:before { content: "\e622"; }
+.ion-ios-laoshirenzheng:before,.ion-md-laoshirenzheng:before,.ion-md-laoshirenzheng-outline:before { content: "\e603"; }
+.ion-ios-jubao2:before,.ion-md-jubao2:before,.ion-md-jubao2-outline:before { content: "\e610"; }
+.ion-ios-tubiaolunkuohua03:before,.ion-md-tubiaolunkuohua03:before,.ion-md-tubiaolunkuohua03-outline:before { content: "\e67c"; }
+.ion-ios-jingcha:before,.ion-md-jingcha:before,.ion-md-jingcha-outline:before { content: "\e60e"; }
+.ion-ios-tongguo:before,.ion-md-tongguo:before,.ion-md-tongguo-outline:before { content: "\e623"; }
+.ion-ios-nan:before,.ion-md-nan:before,.ion-md-nan-outline:before { content: "\e604"; }
+.ion-ios-8:before,.ion-md-8:before,.ion-md-8-outline:before { content: "\e65c"; }
+.ion-ios-biaoti:before,.ion-md-biaoti:before,.ion-md-biaoti-outline:before { content: "\e608"; }
+.ion-ios-zan3:before,.ion-md-zan3:before,.ion-md-zan3-outline:before { content: "\e6ab"; }
+.ion-ios-zhuanfa:before,.ion-md-zhuanfa:before,.ion-md-zhuanfa-outline:before { content: "\e69e"; }
+.ion-ios-huifu:before,.ion-md-huifu:before,.ion-md-huifu-outline:before { content: "\e72d"; }
+.ion-ios-ziliao:before,.ion-md-ziliao:before,.ion-md-ziliao-outline:before { content: "\e642"; }
+.ion-ios-luntan1:before,.ion-md-luntan1:before,.ion-md-luntan1-outline:before { content: "\e606"; }
+.ion-ios-zuigaoji:before,.ion-md-zuigaoji:before,.ion-md-zuigaoji-outline:before { content: "\e6de"; }
+.ion-ios-huodong:before,.ion-md-huodong:before,.ion-md-huodong-outline:before { content: "\e609"; }
+.ion-ios-ziliao1:before,.ion-md-ziliao1:before,.ion-md-ziliao1-outline:before { content: "\e636"; }
+.ion-ios-minzhengxinxi-kunnanrenyuan:before,.ion-md-minzhengxinxi-kunnanrenyuan:before,.ion-md-minzhengxinxi-kunnanrenyuan-outline:before { content: "\e62e"; }
+.ion-ios-wofabiaode:before,.ion-md-wofabiaode:before,.ion-md-wofabiaode-outline:before { content: "\e624"; }
+.ion-ios-jubao:before,.ion-md-jubao:before,.ion-md-jubao-outline:before { content: "\e7b0"; }
+.ion-ios-kunnan:before,.ion-md-kunnan:before,.ion-md-kunnan-outline:before { content: "\e60f"; }
+.ion-ios-huifu1:before,.ion-md-huifu1:before,.ion-md-huifu1-outline:before { content: "\e648"; }
+.ion-ios-yitongguo:before,.ion-md-yitongguo:before,.ion-md-yitongguo-outline:before { content: "\e7a7"; }
+.ion-ios-renzheng:before,.ion-md-renzheng:before,.ion-md-renzheng-outline:before { content: "\e637"; }
+.ion-ios-youxiang:before,.ion-md-youxiang:before,.ion-md-youxiang-outline:before { content: "\e60a"; }
+.ion-ios-biaoti1:before,.ion-md-biaoti1:before,.ion-md-biaoti1-outline:before { content: "\e60b"; }
+.ion-ios-jifen:before,.ion-md-jifen:before,.ion-md-jifen-outline:before { content: "\e7b1"; }
+.ion-ios-browse_fill:before,.ion-md-browse_fill:before,.ion-md-browse_fill-outline:before { content: "\e6e4"; }
+.ion-ios-brush_fill:before,.ion-md-brush_fill:before,.ion-md-brush_fill-outline:before { content: "\e6e5"; }
+.ion-ios-camera_fill:before,.ion-md-camera_fill:before,.ion-md-camera_fill-outline:before { content: "\e6e7"; }
+.ion-ios-collection_fill:before,.ion-md-collection_fill:before,.ion-md-collection_fill-outline:before { content: "\e6ea"; }
+.ion-ios-collection:before,.ion-md-collection:before,.ion-md-collection-outline:before { content: "\e6eb"; }
+.ion-ios-coordinates_fill:before,.ion-md-coordinates_fill:before,.ion-md-coordinates_fill-outline:before { content: "\e6ec"; }
+.ion-ios-homepage_fill:before,.ion-md-homepage_fill:before,.ion-md-homepage_fill-outline:before { content: "\e702"; }
+.ion-ios-mail_fill:before,.ion-md-mail_fill:before,.ion-md-mail_fill-outline:before { content: "\e70a"; }
+.ion-ios-message_fill:before,.ion-md-message_fill:before,.ion-md-message_fill-outline:before { content: "\e70d"; }
+.ion-ios-mine_fill:before,.ion-md-mine_fill:before,.ion-md-mine_fill-outline:before { content: "\e70e"; }
+.ion-ios-remind_fill:before,.ion-md-remind_fill:before,.ion-md-remind_fill-outline:before { content: "\e71f"; }
+.ion-ios-select_fill:before,.ion-md-select_fill:before,.ion-md-select_fill-outline:before { content: "\e725"; }
+.ion-ios-list:before,.ion-md-list:before,.ion-md-list-outline:before { content: "\e655"; }
+.ion-ios-pingjunfen:before,.ion-md-pingjunfen:before,.ion-md-pingjunfen-outline:before { content: "\e7d2"; }
+.ion-ios-xueweilimao:before,.ion-md-xueweilimao:before,.ion-md-xueweilimao-outline:before { content: "\e627"; }
+.ion-ios-gender-1:before,.ion-md-gender-1:before,.ion-md-gender-1-outline:before { content: "\e619"; }
+.ion-ios-gender-2:before,.ion-md-gender-2:before,.ion-md-gender-2-outline:before { content: "\e60c"; }
+.ion-ios-jubao1:before,.ion-md-jubao1:before,.ion-md-jubao1-outline:before { content: "\e74c"; }
+.ion-ios-tongguo1:before,.ion-md-tongguo1:before,.ion-md-tongguo1-outline:before { content: "\e60d"; }
+.ion-ios-fabiao:before,.ion-md-fabiao:before,.ion-md-fabiao-outline:before { content: "\e639"; }
+.ion-ios-kecheng1:before,.ion-md-kecheng1:before,.ion-md-kecheng1-outline:before { content: "\e61d"; }
+.ion-ios-gaojirenzheng:before,.ion-md-gaojirenzheng:before,.ion-md-gaojirenzheng-outline:before { content: "\e620"; }
+.ion-ios-jiantouxia:before,.ion-md-jiantouxia:before,.ion-md-jiantouxia-outline:before { content: "\e62d"; }
+.ion-ios-atyorkulogo:before,.ion-md-atyorkulogo:before,.ion-md-atyorkulogo-outline:before { content: "\e607"; }
+.ion-ios-category:before,.ion-md-category:before,.ion-md-category-outline:before { content: "\e7f9"; }
+
+// gender
+.gender-icon { padding-left:1em}
+.ion-ios-gender-0:before,.ion-md-gender-0:before,.ion-md-gender-0-outline:before { color:#d4237a}
+.ion-ios-gender-1:before,.ion-md-gender-1:before,.ion-md-gender-1-outline:before { color:#1296db}
+.ion-ios-gender-2:before,.ion-md-gender-2:before,.ion-md-gender-2-outline:before { color:#c143b8}
+.ion-ios-zuigaoji:before,.ion-md-zuigaoji:before,.ion-md-zuigaoji-outline:before { color:#fee800}
+
+body {
+  font-family: 'PingFangSC-Light',Arial,Helvetica,sans-serif,"Hiragino Sans GB" !important;
+}
+
+
+
+/**
+ *  List
+ */
+ion-list {
+  margin-bottom: 10px !important;
+
+  .smallIcon {
+    zoom:0.8;
+    transform: translateY(0.2em);
+    //min-height:1.8rem !important;
+    //margin-top:20px !important;
+  }
+
+  ion-label {
+    font-size: 1.6rem !important;
+    color:#4a4a4a !important;
+  }
+
+  ion-note {
+    font-size: 1.5rem !important;
+  }
+
+  .item-inner {
+    border-bottom-color:#ddd !important;
+  }
+
+  .item-block:first-child {
+    border-top: none !important;
+  }
+
+  .item-block:last-child {
+    border-bottom: none !important;
+  }
+
+}
+
+/**
+ *  Input - no border input
+ */
+.input-no-border {
+
+  ion-label {
+    color: color($colors,dark) !important;
+  }
+
+  ion-item {
+    background: color($colors, gray);
+    border-radius: 5px;
+    font-size: 1.1em;
+  }
+
+  ion-input {
+    font-size: 0.9em;
+  }
+
+  .item-inner,.text-input-wp{
+    border: none !important;
+  }
+
+  .item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    border:none !important;
+  }
+
+  .list-md .item-input.input-has-focus:last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .item-input.input-has-focus:last-child .item-inner {
+    box-shadow: none;
+  }
+
+  .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
+    box-shadow: none;
+  }
+
+  .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+}

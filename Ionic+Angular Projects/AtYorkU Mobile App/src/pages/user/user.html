@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="header" no-padding>
+
+    <div class="user-box">
+      <div class="header-box" [ngStyle]="{'background-image':'url('+userImg+')'}"></div>
+      <div class="content-box" padding-left>
+        <div *ngIf="user; else showLogin">
+          <ul>
+            <li class="name"><span>{{user.alias}}</span>
+              <ion-icon [name]="user.gender|genderIcon"></ion-icon>
+              <ion-icon *ngIf="user.is_admin == 1" name="zuigaoji"></ion-icon>
+            </li>
+            <li class="info"><span>{{user.enrollYearTranslate}}</span><span>{{user.degree}}</span><span>{{user.major}}</span></li>
+            <li><span>签名：</span>{{user.description}}</li>
+            <li><span>组别：</span>{{user.title}}</li>
+          </ul>
+        </div>
+        <ng-template #showLogin>
+          <button class="login" ion-button outline color="light" round (click)="navigateToLoginPage()">点击登录</button>
+        </ng-template>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding-top>
+  <ion-list class="smallIconList">
+    <button ion-item>
+      <ion-icon class="smallIcon" name="remind_fill" item-start color="blue"></ion-icon>
+      <ion-label>消息</ion-label>
+      <ion-badge item-end>260k</ion-badge>
+    </button>
+  </ion-list>
+  <ion-list class="smallIconList">
+    <button ion-item>
+      <ion-icon class="smallIcon" name="document" item-start color="orange"></ion-icon>
+      <ion-label>我的帖子</ion-label>
+    </button>
+    <button ion-item>
+      <ion-icon class="smallIcon" name="select_fill" item-start color="primary"></ion-icon>
+      <ion-label>收藏</ion-label>
+    </button>
+  </ion-list>
+  <ion-list class="smallIconList" *ngIf="user">
+    <ion-item>
+      <ion-icon class="smallIcon" name="jifen" item-start color="yellow"></ion-icon>
+      <ion-label>积分</ion-label>
+      <ion-note item-end>{{user.credit}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list class="smallIconList">
+    <button ion-item (click)="navigateToProfilePage()">
+      <ion-icon class="smallIcon" name="settings" item-start color="green"></ion-icon>
+      <ion-label>个人资料</ion-label>
+    </button>
+  </ion-list>
+</ion-content>

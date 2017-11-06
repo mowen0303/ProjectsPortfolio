@@ -1,0 +1,35 @@
+<ion-list class="forumList">
+  <button class="forumBox" *ngFor="let forum of forums; index as i" (click)="navigateToForumDetail($event,forum.id,i)">
+    <header>
+      <p class="category">
+        <span class="s1" *ngIf="forum.sort >0">置顶</span>
+        <span class="s3"
+              *ngIf="forum.category != 'null' && forum.price != 0">{{forum.category | commercialType}}</span>
+        <span class="s2">{{forum.classTitle}}</span>
+      </p>
+      <p class="userPhoto">
+        <span class="img" [ngStyle]="{'background-image':'url('+commonToolService.host+forum.img+')'}"></span>
+      </p>
+      <p class="userName">{{forum.alias}}
+        <ion-icon [name]="forum.gender|genderIcon"></ion-icon>
+        <ion-icon *ngIf="forum.is_admin == 1" name="zuigaoji"></ion-icon>
+      </p>
+      <p class="userInfo">{{forum.major|translateNull:'专业'}} - {{forum.enroll_year|translateNull:'年级'}} -
+        {{forum.degree|translateNull:'学历'}} </p>
+    </header>
+
+    <section>
+      <pre>{{forum.content|contentLength:75}}</pre>
+      <p *ngIf="forum.img1 != ''" class="imgBox" [ngClass]="{'horizontal':forum.img1Width-forum.img1Height>0}"
+         [ngStyle]="{'background-image':'url('+commonToolService.host+forum.img1+')'}"></p>
+    </section>
+
+    <footer>
+      <p class="priceBox" *ngIf="forum.category != 'null' && forum.price != 0">${{forum.price}}</p>
+      <span><ion-icon name="text"></ion-icon>{{forum.comment_num}}</span>
+      <span><ion-icon name="redu"></ion-icon>{{forum.count_view}}</span>
+      <span>{{forum.time}}</span>
+      <span><a *ngIf="forum.editable == 'yes'" (click)="alertDeleteForum($event,forum.id,i)">删除</a></span>
+    </footer>
+  </button>
+</ion-list>

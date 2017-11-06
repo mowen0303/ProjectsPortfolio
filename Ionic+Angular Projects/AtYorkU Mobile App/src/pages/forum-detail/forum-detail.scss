@@ -1,0 +1,201 @@
+page-forum-detail {
+
+  .scroll-content { //这个是ion-content 自带的类，需要修改它
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    user-select: auto !important;
+  }
+
+  .commentNumBox {
+    background: #f4f4f4;
+    padding: 6px 15px;
+    border-radius: 5px 5px 0 0;
+    color: #888;
+    margin-left: 10px;
+    ion-icon {
+      zoom: 0.8;
+      margin-right: 10px;
+    }
+  }
+
+  .forumList {
+
+    .item-inner {
+      border: 0 !important;
+    }
+
+    header {
+      .category {
+        height: 0;
+        text-align: right;
+        padding: 0;
+        margin: 0;
+
+        span {
+          display: inline-block;
+          transform: translateY(2px);
+          border-radius: 10px;
+          padding: 2px 8px;
+          margin: 0px 3px;
+          color: #fff;
+          font-size: 13px;
+        }
+        .s1 {
+          background: color($colors, danger);
+        }
+        .s2 {
+          background: color($colors, green);
+        }
+        .s3 {
+          background: color($colors, orange);
+        }
+      }
+
+      .userPhoto {
+        height: 0;
+        padding: 0;
+        margin: 0;
+        .img {
+          width: 40px;
+          height: 40px;
+          display: block;
+          border-radius: 20px;
+          overflow: hidden;
+          background-size: 100% auto;
+          background-position: center center;
+        }
+      }
+
+      .userName, .userInfo {
+        padding-left: 50px;
+        padding-bottom: 0;
+        margin: 0;
+      }
+
+      .userName {
+        font-size: 1.6rem;
+        color: #4a4a4a;
+      }
+
+    }
+
+    section {
+      pre {
+        font-family: 'PingFangSC-Light', Arial, Helvetica, sans-serif, "Hiragino Sans GB";
+        display: block;
+        overflow: hidden;
+        line-height: 1.43em;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        white-space: pre-wrap !important;
+        word-wrap: break-word;
+        margin: 0.5em 0 10px 0;
+        color: #444;
+        font-size: 1.1em;
+      }
+
+      .imgBox {
+        width: 100px;
+        height: 100px;
+        background-size: 100% auto;
+        background-position: center center;
+        background-color: #f4f4f4;
+        background-repeat: no-repeat;
+      }
+
+      .imgBox.horizontal {
+        background-size: auto 100%;
+      }
+    }
+
+    footer {
+      margin-top: 16px;
+      padding-top: 5px;
+      font-size: 1.3rem;
+      color: #bbb;
+      span {
+        margin-right: 2px;
+        display: inline-block;
+        min-width: 60px;
+        ion-icon {
+          margin-right: 0.5rem;
+        }
+        a {
+          color: #999
+        }
+        a.activated {
+          color: color($colors, primary);
+        }
+      }
+      .priceBox {
+        height: 0;
+        text-align: right;
+        font-size: 2.1rem;
+        color: color($colors, primary);
+      }
+    }
+
+  }
+
+  .forumCommentList {
+
+    border-top: 10px solid #f4f4f4;
+
+    ion-item {
+      border-bottom: 2px solid #f4f4f4;
+    }
+
+    header {
+      .reply {
+        height: 0px;
+        text-align: right;
+        font-size: 2rem;
+        a {
+          color: #4a4a4a;
+        }
+        a.activated {
+          color: color($colors,primary);
+        }
+      }
+    }
+
+    section {
+      padding-left: 50px;
+    }
+
+    footer {
+      border: none;
+      padding-left: 50px;
+      margin: 0;
+    }
+
+  }
+
+  ion-footer {
+
+    .submitBtn {
+      position: absolute !important;
+      right: 10px;
+      bottom: 5px;
+    }
+
+    #myInput {
+      width: calc(100% - 80px);
+      border: 1px solid #f4f4f4;
+      border-radius: 4px;
+      background: #fff;
+      outline: none;
+      -webkit-appearance: none;
+      resize: none;
+      min-height: 24px !important;
+      margin-left: 10px;
+      font-size: 1.5rem;
+      color: #4a4a4a;
+      font-family: Verdana;
+      padding: 4px 1px;
+    }
+
+  }
+
+}

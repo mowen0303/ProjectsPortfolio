@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>个人资料</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding-top>
+  <ion-list>
+    <button ion-item (click)="changePhoto()">
+      <ion-label>头像</ion-label>
+      <ion-avatar item-end>
+        <div class="header-box" [ngStyle]="{'background-image':'url('+userImg+')'}"></div>
+      </ion-avatar>
+    </button>
+    <button ion-item (click)="navigateToProfileUpdatePage('alias')">
+      <ion-label>昵称</ion-label>
+      <ion-note item-end>{{user.alias}}</ion-note>
+    </button>
+    <button ion-item (click)="navigateToProfileUpdatePage('gender')">
+      <ion-label>性别</ion-label>
+      <ion-note item-end>{{user.gender | gender}}</ion-note>
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+    <button ion-item (click)="navigateToProfileUpdatePage('description')">
+      <ion-label>签名</ion-label>
+      <ion-note item-end>{{user.description}}</ion-note>
+    </button>
+  </ion-list>
+  <ion-list>
+    <button ion-item (click)="navigateToProfileUpdatePage('wechat')">
+      <ion-label>微信号</ion-label>
+      <ion-note item-end>{{user.wechat}}</ion-note>
+    </button>
+  </ion-list>
+  <ion-list>
+    <button ion-item (click)="navigateToProfileUpdatePage('major')">
+      <ion-label>专业</ion-label>
+      <ion-note item-end>{{user.major}}</ion-note>
+    </button>
+    <button ion-item (click)="navigateToProfileUpdatePage('enrollYear')">
+      <ion-label>年级</ion-label>
+      <ion-note item-end>{{user.enrollYearTranslate}}</ion-note>
+    </button>
+    <button ion-item (click)="navigateToProfileUpdatePage('degree')">
+      <ion-label>学历</ion-label>
+      <ion-note item-end>{{user.degree}}</ion-note>
+    </button>
+  </ion-list>
+  <ion-list>
+    <ion-item ion-item>
+      <ion-label>账号</ion-label>
+      <ion-note item-end>{{user.name}}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>注册时间</ion-label>
+      <ion-note item-end>{{user.registertime}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <button ion-item (click)="navigateToProfileUpdatePage('password')">
+      <ion-label>修改密码</ion-label>
+    </button>
+  </ion-list>
+  <div margin padding>
+    <button ion-button block (click)="logout()">退出登录</button>
+  </div>
+
+</ion-content>
+

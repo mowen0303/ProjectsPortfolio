@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>详情</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list class="forumList">
+    <ion-item class="forumBox" *ngFor="let forum of forums; index as i">
+      <header>
+        <p class="category">
+          <span class="s1" *ngIf="forum.sort >0">置顶</span>
+          <span class="s3"
+                *ngIf="forum.category != 'null' && forum.price != 0">{{forum.category | commercialType}}</span>
+          <span class="s2">{{forum.classTitle}}</span>
+        </p>
+        <p class="userPhoto">
+          <span class="img" [ngStyle]="{'background-image':'url('+common.host+forum.img+')'}"></span>
+        </p>
+        <p class="userName">{{forum.alias}}
+          <ion-icon [name]="forum.gender|genderIcon"></ion-icon>
+          <ion-icon *ngIf="forum.is_admin == 1" name="zuigaoji"></ion-icon>
+        </p>
+        <p class="userInfo">{{forum.major|translateNull:'专业'}} - {{forum.enroll_year|translateNull:'年级'}} -
+          {{forum.degree|translateNull:'学历'}} </p>
+      </header>
+
+      <section>
+        <pre>{{forum.content|contentLength:75}}</pre>
+        <p *ngIf="forum.img1 != ''" class="imgBox" [ngClass]="{'horizontal':forum.img1Width-forum.img1Height>0}"
+           [ngStyle]="{'background-image':'url('+commonToolService.host+forum.img1+')'}"></p>
+      </section>
+      <footer>
+        <p class="priceBox" *ngIf="forum.category != 'null' && forum.price != 0">${{forum.price}}</p>
+        <span><a (click)="forumPass(forum.id,i)">合法</a></span>
+        <span><a (click)="doDeleteForum(forum.id,i)">不合法</a></span>
+      </footer>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="forumList forumCommentList">
+    <ion-item *ngFor="let comment of comments">
+
+      <header>
+        <p class="userPhoto">
+          <span class="img" [ngStyle]="{'background-image':'url('+common.host+comment.img+')'}"></span>
+        </p>
+        <p class="userName">{{comment.alias}}
+          <ion-icon [name]="comment.gender|genderIcon"></ion-icon>
+          <ion-icon *ngIf="comment.is_admin == 1" name="zuigaoji"></ion-icon>
+        </p>
+        <p class="userInfo">{{comment.major|translateNull:'专业'}} - {{comment.enroll_year|translateNull:'年级'}} -
+          {{comment.degree|translateNull:'学历'}} </p>
+      </header>
+
+      <section>
+        <pre>{{comment.content_comment}}</pre>
+      </section>
+
+      <footer>
+        <span><a (click)="commentPass(comment.id,i)">合法</a> </span>
+        <span><a (click)="doDeleteComment(comment.id,i)">不合法</a></span>
+      </footer>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

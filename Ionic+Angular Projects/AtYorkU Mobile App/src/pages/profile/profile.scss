@@ -1,0 +1,18 @@
+page-profile {
+
+  ion-content{
+    background-color: color($colors, content-bg) !important;
+  }
+
+  .header-box {
+    float: left;
+    width: 66px;
+    height: 66px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    border: 2px solid #fff;
+  }
+}

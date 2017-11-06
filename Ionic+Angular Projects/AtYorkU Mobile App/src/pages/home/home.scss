@@ -1,0 +1,15 @@
+page-home {
+  ion-content.js-scroll > .scroll-content {
+    position: relative;
+
+    min-height: 100%;
+  }
+
+  ion-content.js-scroll > .scroll-content,
+  ion-content[no-scroll] > .scroll-content {
+    overflow-x: initial;
+    overflow-y: initial;
+    -webkit-overflow-scrolling: auto;
+    will-change: initial;
+  }
+}

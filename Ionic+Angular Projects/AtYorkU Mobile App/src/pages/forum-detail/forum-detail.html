@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>详情</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="ios-more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list class="forumList">
+    <ion-item class="forumBox">
+      <header>
+        <p class="category">
+          <span class="s1" *ngIf="forum.sort >0">置顶</span>
+          <span class="s3"
+                *ngIf="forum.category != 'null' && forum.price != 0">{{forum.category | commercialType}}</span>
+          <span class="s2">{{forum.classTitle}}</span>
+        </p>
+        <p class="userPhoto">
+          <span class="img" [ngStyle]="{'background-image':'url('+common.host+forum.img+')'}"></span>
+        </p>
+        <p class="userName">{{forum.alias}}
+          <ion-icon [name]="forum.gender|genderIcon"></ion-icon>
+          <ion-icon *ngIf="forum.is_admin == 1" name="zuigaoji"></ion-icon>
+        </p>
+        <p class="userInfo">{{forum.major|translateNull:'专业'}} - {{forum.enroll_year|translateNull:'年级'}} -
+          {{forum.degree|translateNull:'学历'}} </p>
+      </header>
+
+      <section>
+        <pre>{{forum.content}}</pre>
+        <p *ngIf="forum.img1 != ''"><img [src]="common.host+forum.img1" width="100%" height="auto"></p>
+
+      </section>
+      <footer>
+        <p class="priceBox" *ngIf="forum.category != 'null' && forum.price != 0">${{forum.price}}</p>
+        <span><ion-icon name="redu"></ion-icon>{{forum.count_view}}</span>
+        <span>{{forum.time}}</span>
+        <span><a (click)="alertReportForum(forum.id)"><ion-icon name="jubao1"></ion-icon></a></span>
+        <span><a *ngIf="forum.editable == 'yes'" (click)="alertDeleteForum(forum.id,i)">删除</a></span>
+      </footer>
+    </ion-item>
+  </ion-list>
+  <span class="commentNumBox"><ion-icon name="huifu1"></ion-icon>{{forum.comment_num}} 条</span>
+
+  <ion-list class="forumList forumCommentList">
+    <ion-item *ngFor="let comment of comments; index as i">
+
+      <header>
+        <p class="reply"><ion-icon *ngIf="user != null && user.id != comment.user_id" (click)="reply($event,comment.user_id,comment.alias)" name="huifu"></ion-icon></p>
+        <p class="userPhoto">
+          <span class="img" [ngStyle]="{'background-image':'url('+common.host+comment.img+')'}"></span>
+        </p>
+        <p class="userName">{{comment.alias}}
+          <ion-icon [name]="comment.gender|genderIcon"></ion-icon>
+          <ion-icon *ngIf="comment.is_admin == 1" name="zuigaoji"></ion-icon>
+        </p>
+        <p class="userInfo">{{comment.major|translateNull:'专业'}} - {{comment.enroll_year|translateNull:'年级'}} -
+          {{comment.degree|translateNull:'学历'}} </p>
+      </header>
+
+      <section>
+        <pre>{{comment.content_comment}}</pre>
+      </section>
+
+      <footer>
+        <span>{{comment.time}}</span>
+        <span><a (click)="alertReportComment(comment.id)"><ion-icon name="jubao1"></ion-icon></a></span>
+        <span><a *ngIf="comment.editable == 'yes'" (click)="alertDeleteComment(comment.id,i)">删除</a></span>
+      </footer>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="infiniteEnabled" threshold="0px">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
+
+<ion-footer #footer>
+  <ion-toolbar>
+    <textarea [readonly]="!isLogin" (click)="checkLogin()"  #myInput id="myInput" rows="1" maxLength="150" [placeholder]="newCommentPlaceHolder"
+              (keyup)="resizeTextarea()" (blur)="blurTextarea()"  [(ngModel)]="newComment"></textarea>
+    <button class="submitBtn" ion-button small (click)="addComment()" [disabled]="!enabledAddButton">发送</button>
+  </ion-toolbar>
+</ion-footer>

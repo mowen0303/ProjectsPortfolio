@@ -1,0 +1,114 @@
+<ion-header>
+
+  <ion-navbar color="header">
+    <ion-title>修改资料</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="aliasBox">
+    <ion-item>
+      <ion-label color="primary" floating>昵称</ion-label>
+      <ion-input [(ngModel)]="userLocalStorage.alias"></ion-input>
+    </ion-item>
+    <p padding>
+      <button ion-button block (click)="updateAlias()"> 提交</button>
+    </p>
+  </div>
+  <div *ngIf="genderBox">
+    <ion-list radio-group>
+      <ion-item>
+        <ion-label>男</ion-label>
+        <ion-radio (click)="updateGender(1)" value="1" [checked]="userLocalStorage.gender == 1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>女</ion-label>
+        <ion-radio (click)="updateGender(0)" value="0" [checked]="userLocalStorage.gender == 0"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>不明</ion-label>
+        <ion-radio (click)="updateGender(2)" value="2" [checked]="userLocalStorage.gender == 2"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="descriptionBox">
+    <ion-item>
+      <ion-label color="primary" floating>签名</ion-label>
+      <ion-input [(ngModel)]="userLocalStorage.description"></ion-input>
+    </ion-item>
+    <p padding>
+      <button ion-button block (click)="updateDescription()"> 提交</button>
+    </p>
+  </div>
+
+  <div *ngIf="wechatBox">
+    <ion-item>
+      <ion-label color="primary" floating>微信</ion-label>
+      <ion-input [(ngModel)]="userLocalStorage.wechat"></ion-input>
+    </ion-item>
+    <p padding>
+      <button ion-button block (click)="updateWechat()"> 提交</button>
+    </p>
+  </div>
+
+  <div *ngIf="majorBox">
+    <ion-item>
+      <ion-label color="primary" floating>专业</ion-label>
+      <ion-input [(ngModel)]="userLocalStorage.major"></ion-input>
+    </ion-item>
+    <p padding>
+      <button ion-button block (click)="updateMajor()"> 提交</button>
+    </p>
+  </div>
+
+  <div *ngIf="enrollYearBox">
+    <ion-item>
+      <ion-label color="primary" floating>入学年份</ion-label>
+      <ion-datetime displayFormat="YYYY" min="2000" [(ngModel)]="enrollYearDate"></ion-datetime>
+    </ion-item>
+    <p padding>
+      <button ion-button block (click)="updateEnrollYear()"> 提交</button>
+    </p>
+  </div>
+
+  <div *ngIf="degreeBox">
+    <ion-list radio-group>
+      <ion-item>
+        <ion-label>本科</ion-label>
+        <ion-radio (click)="updateDegree('本科')" value="1" [checked]="userLocalStorage.degree == '本科'"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>研究生</ion-label>
+        <ion-radio (click)="updateDegree('研究生')" value="0" [checked]="userLocalStorage.degree == '研究生'"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>博士</ion-label>
+        <ion-radio (click)="updateDegree('博士')" value="2" [checked]="userLocalStorage.degree == '博士'"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="passwordBox">
+    <ion-item>
+      <ion-label color="primary" floating>原密码</ion-label>
+      <ion-input type="password" [(ngModel)]="oldPassword"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>新密码</ion-label>
+      <ion-input type="password" [(ngModel)]="newPassword"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>确人新密码</ion-label>
+      <ion-input type="password" [(ngModel)]="newPassword2"></ion-input>
+    </ion-item>
+    <p padding>
+      <button ion-button block (click)="updatePassword()"> 提交</button>
+    </p>
+  </div>
+
+
+</ion-content>
