@@ -8,4 +8,4 @@ A HTML web page game I designed and wrote all the code.
 - CSS
 
 ### Demo
- https://goo.gl/RLXoRf
+https://goo.gl/kBU25b
