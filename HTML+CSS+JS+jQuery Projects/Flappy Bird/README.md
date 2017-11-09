@@ -5,4 +5,7 @@ A HTML web page game I designed and wrote all the code.
 - JavaScript(OOP)
 - jQuery
 - XHTML
-- CSS.
+- CSS
+
+### Demo
+ https://goo.gl/RLXoRf
