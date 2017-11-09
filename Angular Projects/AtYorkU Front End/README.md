@@ -5,3 +5,6 @@ The web page application of AtYorkU project I designed the UI and wrote all the 
 - Angular
 - XHTML
 - CSS
+
+### Demo
+http://www.atyorku.ca
