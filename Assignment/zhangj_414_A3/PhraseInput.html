@@ -8,10 +8,10 @@
 </head>
 <body>
 <div id="container">
-    <form name="phraseForm" action="PhraseParse.php" method="post">
+    <form name="phraseForm" action="PhraseParse.php" method="get">
         <label>Phrase</label>
         <input type="text" name="phrase" value="">
-        <input type="submit" value="SubmitPhrase" onclick="return validatePhaseInput()">
+        <input type="submit" name="submitButton" value="SubmitPhrase" onclick="return validatePhaseInput()">
     </form>
 </div>
 </body>
