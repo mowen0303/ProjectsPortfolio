@@ -958,7 +958,7 @@ end;
 ---------------------------------------
 
 --[Jerry Part]
---conditions specified on elements
+--x1.conditions specified on elements
 --get the item information that the price more than 6 form xml file
 xquery
 let $d := doc("/public/myfolder2/jerry1.xml")
@@ -967,7 +967,7 @@ where $e/item/price > 6
 return <item><name>{$e/item/itemName/text()}</name><price>{$e/item/price/text()}</price></item>
 /
 
---conditions specified on attribute
+--x2.conditions specified on attribute
 --get the item informaton that the deliverItemID more than 1 form xml file
 xquery
 let $d := doc("/public/myfolder2/jerry1.xml")
@@ -976,7 +976,7 @@ where $e/@deliverItemID > 1
 return element item {element name {$e/item/itemName/text()},element price {$e/item/price/text()}}
 /
 
---xquery two xml file & return values without XML tags
+--x3.xquery two xml file & return values without XML tags
 --get the item name and supper name form 2 xml
 xquery
 let $d:=doc('/public/myfolder2/jerry1.xml')
@@ -988,7 +988,7 @@ return concat('The selected item name is ',string($e/item/itemName/text()),',and
 /
 
 --[Kristen Part]
---conditions specified on elements 
+--x4.conditions specified on elements 
 xquery
 let $d := doc("/public/myfolder2/kristen5.xml")
 for $e in $d/shipmentInfo/shipmentList
@@ -996,7 +996,7 @@ where $e/shipment/status = 'complete'
 return <shipment><driverName>{$e/shipment/driverName/text()}</driverName><carLicensePlate>{$e/shipment/carLicensePlate/text()}</carLicensePlate><completeDate>{$e/shipment/completeDate/text()}</completeDate></shipment>
 /
 
---conditions specified on attribute 
+--x5.conditions specified on attribute 
 xquery
 let $d := doc("/public/myfolder2/kristen5.xml")
 for $e in $d/shipmentInfo/shipmentList
@@ -1004,7 +1004,7 @@ where $e/@DRIVERID > 100
 return element shipment {element driverName {$e/shipment/driverName/text()},element carLicensePlate {$e/shipment/carLicensePlate/text()}}
 /
 
---xquery two xml file & return values without XML tags
+--x6.xquery two xml file & return values without XML tags
 xquery
 let $d:=doc('/public/myfolder2/kristen5.xml')
 for $e in $d/shipmentInfo/shipmentList/shipment
@@ -1014,7 +1014,7 @@ where $e/driverName=$e2/DRIVERNAME
 return concat('The selected driver name is ',string($e/driverName/text()),', and car license plate is ',string($e/carLicensePlate/text()),'.')
 /
 
---conditions specified on elements 
+--x7.conditions specified on elements 
 xquery
 let $d := doc("/public/myfolder2/eva2.xml")
 for $e in $d/building1001/inventory/fruits
@@ -1022,7 +1022,7 @@ where $e/name = 'mango'
 return <item><name>{$e/name/text()}</name><price>{$e/price/text()}</price></item>
 /
 
---conditions specified on attribute 
+--x8.conditions specified on attribute 
 xquery
 let $d := doc("/public/myfolder2/eva1.xml")
 for $e in $d/availableCars/shipmentUsed
@@ -1030,7 +1030,7 @@ where $e/@SID = 1
 return element item {element ID {$e/cars/ID/text()}, element plateNumber {$e/cars/plateNumber/text()}, element type {$e/cars/type/text()}}
 /
 
---xquery two xml file & return values without XML tags
+--x9.xquery two xml file & return values without XML tags
 xquery
 let $c := doc("/public/myfolder2/eva111.xml")
 for $d in $c/shipment1/employee[ID = 101]
@@ -1040,13 +1040,7 @@ where $d/driver/@num = $e/num
 return $e/name/text()
 /
 
---print data of xml 
-xquery
-let $d := doc("/public/myfolder2/effy13.xml")
-return $d
-/
-
---conditions specified on elements
+--x10.conditions specified on elements
 --List the clerk, driver, plate number information which has shipment ID greater than 2 
 xquery
 let $c :=doc("/public/myfolder2/effy15.xml")
@@ -1058,7 +1052,7 @@ return <shipment><clerkName>{$d/shipment/clerkName/text()}</clerkName>
 </shipment>
 /
 
---conditions specified on tag attributes
+--x11.conditions specified on tag attributes
 --Display the inventory name, price, and quantity stored in buidling ID 1003
 xquery 
 let $d :=doc("/public/myfolder2/effy13.xml")
@@ -1068,7 +1062,7 @@ return element inventory {element name {$e/inventory/name/text()},element price
 {$e/inventory/price/text()},element quantity {$e/inventory/quantity/text()}}
 /
 
---xquery two xml file & return values without XML tags
+--x12.xquery two xml file & return values without XML tags
 --Display the item name and price with its associated supplier.
 xquery
 let $d :=doc("/public/myfolder2/effy13.xml")
@@ -1080,7 +1074,7 @@ return concat ('The item name is ', string($e2/name/text()),', price is $ ', str
 ($e/price/text()),', and the supplier is ',string($e2/supplierName/text()),'.')
 /
 
---conditions specified on elements 
+--x13.conditions specified on elements 
 xquery
 let $d := doc("/public/myfolder2/peter1.xml")
 for $e in $d/inventory/Item/Info
@@ -1088,7 +1082,7 @@ where $e/itemPrice > 9
 return <item><name>{$e/itemName/text()}</name><quantity>($e/quantity/text())</quantity></item>
 /
 
---conditions specified on attribute 
+--x14.conditions specified on attribute 
 xquery
 let $d := doc("/public/myfolder2/peter1.xml")
 for $e in $d/inventory/Item
@@ -1096,7 +1090,7 @@ where $e/@CHECKINDATE ="1987-10-05"
 return element item {element name {$e/Info/itemName/text()},element quantity {$e/Info/quantity/text()}}
 /
 
---xquery two xml file & return values without XML tags
+--x15.xquery two xml file & return values without XML tags
 xquery
 let $d:=doc('/public/myfolder2/peter1.xml')
 for $e in $d/inventory/Item/Info
