@@ -11,7 +11,7 @@ OracleXML getXML\
 -rowsetTag "deliverInfo"\
 -rowTag "driver" \
 -rowIdAttr "count" \
-"select d.shipment.driver.lastname as "lastname",d.shipment.driver.firstname as "firstname",d.shipment.driver.driverlicense as "driverLicense" from deliveritem d where d.shipment.car.type = 'medium'";
+"select d.shipment.driver.lastname as lastname,d.shipment.driver.firstname as firstname,d.shipment.driver.driverlicense as driverLicense from deliveritem d where d.shipment.car.type = 'medium'";
 
 --6.(XSU)List all shipping details from Shipment when clerks search for shipment information.
 OracleXML getXML\
@@ -23,20 +23,30 @@ OracleXML getXML\
 "select d.shipment_ID as shipmentID, d.driver.employee_id as driverID, d.driver.fullname() as driverName, d.car.platenumber as carLicensePlate, d.order_date as orderDate,d.complete_date as completeDate,d.status() as status from shipment d";
 
 --11.(XSU) Display the Driver information associated with Shipment ID “1”. 
-OracleXML getXML \
--user "grp6/here4grp6"\
+OracleXML getXML\
+-user "grp6/here4grp6" \
 -conn "jdbc:oracle:thin:@sit.yorku.ca:1521:studb10g" \
--rowsetTag "shipment1" -rowTag "driver" \
+-rowsetTag "inventoryList"\
+-rowTag "itemInfo" \
 "select d.driver.employee_id as ID, d.driver.firstname firstname, d.driver.lastname as lastname from shipment d where d.shipment_id = 1";
 
 --16.(XSU) Display the Item information that was delivered by a small Car.
 OracleXML getXML\
 -user "grp6/here4grp6" \
 -conn "jdbc:oracle:thin:@sit.yorku.ca:1521:studb10g" \
--rowsetTag "inventoryList" -rowTag "itemInfo" \
-"select d.item.name as itemName, d.item.price as itemPrice, \
-d.item.item_id as itemID from deliveritem d \
-where d.shipment.car.type = 'small'";
+-rowsetTag "inventoryList"\
+-rowTag "itemInfo" \
+"select d.item.name as itemName, d.item.price as itemPrice, d.item.item_id as itemID from deliveritem d where d.shipment.car.type = 'small'";
+
+--18.(XSU)Display the Inventory information of the Item “plum”.
+OracleXML getXML\
+-user "grp6/here4grp6" \
+-conn "jdbc:oracle:thin:@sit.yorku.ca:1521:studb10g" \
+-rowsetTag "deliverInfo"\
+-rowTag "driver" \
+-rowIdAttr "count" \
+"select d.item.item_id as itemId, d.item.price as itemPrice, d.item.name as Name from inventory d where d.item.name='plum'";
+
 
 
 
@@ -117,15 +127,6 @@ version'1.0', standalone yes) as result from shipment s where s.complete_date = 
 
 --17.(Group By) Display Item ID, name and its quantity stored in Building #1001 group by check-in date.
 select xmlroot(xmlelement("inventory", xmlagg(xmlelement("Item", xmlattributes(i.checkin_date as checkinDate),xmlagg(xmlelement("Info",xmlforest(i.item.name as "itemName", i.item.price as "itemPrice", i.quantity as "quantity")))))), version '1.0', standalone yes) as result from inventory i where i.building.building_id= 1001 group by i.checkin_date;
-
---18.(XSU)Display the Inventory information of the Item “plum”.
-OracleXML getXML 
--user "grp6/here4grp6" \
--conn "jdbc:oracle:thin:@sit.yorku.ca:1521:studb10g" 
--rowsetTag "deliverInfo"\
--rowTag "driver" \
--rowIdAttr "count" \
-"select d.item.item_id as "itemId", d.item.price as "itemPrice", d.item.name as "Name" from inventory d where d.item.name='plum'"
 
 --19.Display the building address where the mango was delivered to. 
 select xmlroot(xmlelement("mango",(xmlelement("delivery",xmlagg(xmlelement("address",xmlforest(d.deliver_building.building_id as "ID", d.deliver_building.name as "Name", d.deliver_building.address as "address")))))), version '1.0', standalone yes)as result from deliveritem d where d.item.name = 'mango';
