@@ -231,7 +231,7 @@ class MsgModel extends Model {
 
         //config
         // API access key from Google API's Console
-        define("API_ACCESS_KEY", "AIzaSyC2fX0_SQ20jY7Ov0HeS7P3xFuYqFCvX8E");
+        define("API_ACCESS_KEY", "xxx");
         $registrationIds = $deviceToken;
         // prep the bundle
         $msg = array
