@@ -230,7 +230,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 
 
 			};
-		ys1.src="http://cdn1.zygames.com/mocool/zqsg/index/logo.png";
+		ys1.src="./images/logo.png";
 		//slogan
 		var ys2 = new Image();
 
@@ -239,7 +239,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#slogan").css({"background-image":"url("+this.src+")"}).fadeIn(1200);
 		};
-		ys2.src="http://cdn1.zygames.com/mocool/zqsg/index/slogan.png";
+		ys2.src="./images/slogan.png";
 		//hero
 		var ys7 = new Image();
 		ys7.onload = function(){
@@ -247,7 +247,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#hero").css({"background-image":"url("+this.src+")"});
 		};
-		ys7.src="http://cdn1.zygames.com/mocool/zqsg/index/hero3.png";
+		ys7.src="./images/hero3.png";
 		//前景
 		var ys3 = new Image();
 
@@ -256,7 +256,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#scene_front").css({"background-image":"url("+this.src+")"});
 		};
-		ys3.src="http://cdn1.zygames.com/mocool/zqsg/index/sceneBg_1.png";
+		ys3.src="./images/sceneBg_1.png";
 		//近景
 		var ys4 = new Image();
 		ys4.onload = function(){
@@ -264,7 +264,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#scene_middle").css({"background-image":"url("+this.src+")"});
 		};
-		ys4.src="http://cdn1.zygames.com/mocool/zqsg/index/sceneBg_2.png";
+		ys4.src="./images/sceneBg_2.png";
 		//远景
 		var ys5 = new Image();
 		ys5.onload = function(){
@@ -272,14 +272,14 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#scene_back").css({"background-image":"url("+this.src+")"});
 		};
-		ys5.src="http://cdn1.zygames.com/mocool/zqsg/index/sceneBg_3.jpg";
+		ys5.src="./images/sceneBg_3.jpg";
 		//云
 		var ys6 = new Image();
 		ys6.onload = function(){
 			loadnum++;
 			loading(loadnum);
 		};
-		ys6.src="http://cdn1.zygames.com/mocool/zqsg/index/sceneBg_cloud.png";
+		ys6.src="./images/sceneBg_cloud.png";
 		//门
 		var ys9 = new Image();
 		ys9.onload = function(){
@@ -287,7 +287,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#door2").css({"background-image":"url("+this.src+")"});
 		};
-		ys9.src="http://cdn1.zygames.com/mocool/zqsg/index/door2.png";
+		ys9.src="./images/door2.png";
 		//门光
 		var ys8 = new Image();
 		ys8.onload = function(){
@@ -295,7 +295,7 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#door").css({"background-image":"url("+this.src+")"});
 		};
-		ys8.src="http://cdn1.zygames.com/mocool/zqsg/index/door.png";
+		ys8.src="./images/door.png";
 		//对话框
 		var ys10 = new Image();
 		ys10.onload = function(){
@@ -303,10 +303,10 @@ function n(v){return Math.floor((Math.floor(Math.random()*10)%(v+1)))}
 			loading(loadnum);
 			$("#alert").css({"background-image":"url("+this.src+")"});
 		};
-		ys10.src="http://cdn1.zygames.com/mocool/zqsg/index/alertBg.png";
+		ys10.src="./images/alertBg.png";
 
 	};
-	ys0.src="http://cdn1.zygames.com/mocool/zqsg/index/loadingBg.jpg";
+	ys0.src="./images/loadingBg.jpg";
 
 
 	//loading
