@@ -1,3 +1,0 @@
-<?php
-const KEY = "ATYORKU";
-?>
