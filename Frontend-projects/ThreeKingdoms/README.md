@@ -1,5 +1,5 @@
 ### Description
-A HTML web page animation I designed and wrote all the code.
+A HTML web page animation was developed in 2013.
 
 ### Skills used
 - JavaScript(OOP)
@@ -8,4 +8,4 @@ A HTML web page animation I designed and wrote all the code.
 - CSS
 
 ### demo
-https://mowen0303.github.io/ProjectsPortfolio/HTML_CSS_JS/ThreeKingdoms/
+https://mowen0303.github.io/ProjectsPortfolio/Frontend-projects/ThreeKingdoms/
