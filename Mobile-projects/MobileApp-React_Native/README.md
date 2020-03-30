@@ -1,5 +1,5 @@
 ### Description
-2 subsystems example code of a mobile project. Designed and Developed in 2017.
+2 subsystems example code of a mobile project. Designed and Developed in 2016.
 
 All the data are exchanged via REST API of a server.
 
