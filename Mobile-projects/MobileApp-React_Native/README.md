@@ -7,10 +7,10 @@ All the data are exchanged via REST API of a server.
 2. Forum subsystem: Allow end-users to post text and images on forum and share with others.
 
 
-### Responsibility
-- Designed the architecture of the project.
-- Coded the entired project.
-- Design and code the UI.
+### My Responsibility
+1. Designed the architecture of the project.
+2. Coded the entired project.
+3. Design and code the UI.
 
 ### Skills used
 - React Native
